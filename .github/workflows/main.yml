@@ -22,7 +22,7 @@ jobs:
           push: true
           file: ./src/Review-Filmes.Web/Dockerfile
           tags: |
-            elieldiniz/review-filmes-test1:v&{{github.run_number}}
+            elieldiniz/review-filmes-test1:v${{github.run_number}}
             elieldiniz/review-filmes-test1:latest
   CD:
     runs-on: ubuntu-latest
