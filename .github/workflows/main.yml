@@ -15,10 +15,15 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: passo 01
-        run: echo "Construir a imagem da aplicação"
-      - name: passo 02
-        run: echo "Publicar a imagem no Docker hub"
+      - name: Construção da imagem Docker e envio para o Docker hub
+        uses: docker/build-push-action@v6.3.0
+        with:
+          context: ./src
+          push: true
+          file: ./src/Review-Filmes.Web/Dockerfile
+          tags: |
+            elieldiniz/review-filmes-test1:v&{{github.run_number}}
+            elieldiniz/review-filmes-test1:latest
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
