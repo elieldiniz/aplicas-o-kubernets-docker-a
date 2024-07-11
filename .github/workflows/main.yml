@@ -44,7 +44,7 @@ jobs:
           manifests: |
             k8s/deployment.yaml
           images: |
-            'elieldiniz/review-filmes-test1:v${{github.run_number }}'
+            elieldiniz/review-filmes-test1:v${{github.run_number }}
 
 
 
