@@ -39,10 +39,10 @@ jobs:
       - name: Configuração do Kubeconfig
         run: aws eks update-kubeconfig --name integracaopapeline
       - name: Deploy no kubernets
-        uses: Azure/k8s-deploy@v5.0.0
+        uses: Azure/k8s-deploy@v5
         with:
           manifests: |
-            ./k8s/deployment.yaml
+            k8s/deployment.yaml
           images: |
             'elieldiniz/review-filmes-test1:v${{github.run_number }}'
 
