@@ -34,6 +34,7 @@ spec:
     app: postgre
   ports:
   - port: 5432
+---
 #Deploy aplicação web
 apiVersion: apps/v1
 kind: Deployment
