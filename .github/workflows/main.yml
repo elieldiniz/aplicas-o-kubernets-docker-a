@@ -37,7 +37,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - name: Configuração do Kubeconfig
-        run: aws eks update-kubeconfig --name test
+        run: aws eks update-kubeconfig --name integracaopapeline
       - name: Deploy no kubernets
         uses: Azure/k8s-deploy@v5.0.0
         with:
